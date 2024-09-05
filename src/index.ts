@@ -1,1 +1,1 @@
-export const testFunc = (): string => 'Hello world';
+export { deepCloneReplace, deepClone, merge } from './deepCloneReplace';
