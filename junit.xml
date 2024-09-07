@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="15" failures="0" errors="0" time="0.377">
+  <testsuite name="deepCloneReplace" errors="0" failures="0" skipped="0" timestamp="2024-09-07T02:33:03" time="0.317" tests="15">
+    <testcase classname="deepCloneReplace merge should merge two simple objects" name="deepCloneReplace merge should merge two simple objects" time="0.001">
+    </testcase>
+    <testcase classname="deepCloneReplace merge should merge nested objects" name="deepCloneReplace merge should merge nested objects" time="0">
+    </testcase>
+    <testcase classname="deepCloneReplace merge should merge when the source has arrays" name="deepCloneReplace merge should merge when the source has arrays" time="0">
+    </testcase>
+    <testcase classname="deepCloneReplace merge should merge when the target has arrays" name="deepCloneReplace merge should merge when the target has arrays" time="0.001">
+    </testcase>
+    <testcase classname="deepCloneReplace merge should initialize target key as an empty array if source key is an array" name="deepCloneReplace merge should initialize target key as an empty array if source key is an array" time="0">
+    </testcase>
+    <testcase classname="deepCloneReplace merge should initialize target key as an empty object if source key is an object" name="deepCloneReplace merge should initialize target key as an empty object if source key is an object" time="0">
+    </testcase>
+    <testcase classname="deepCloneReplace deepClone should clone a simple object" name="deepCloneReplace deepClone should clone a simple object" time="0">
+    </testcase>
+    <testcase classname="deepCloneReplace deepClone should clone a nested object" name="deepCloneReplace deepClone should clone a nested object" time="0">
+    </testcase>
+    <testcase classname="deepCloneReplace deepClone should clone an array" name="deepCloneReplace deepClone should clone an array" time="0.001">
+    </testcase>
+    <testcase classname="deepCloneReplace deepClone should clone an object with arrays" name="deepCloneReplace deepClone should clone an object with arrays" time="0">
+    </testcase>
+    <testcase classname="deepCloneReplace deepCloneReplace should clone exactly same object" name="deepCloneReplace deepCloneReplace should clone exactly same object" time="0">
+    </testcase>
+    <testcase classname="deepCloneReplace deepCloneReplace should replace a key in a simple object" name="deepCloneReplace deepCloneReplace should replace a key in a simple object" time="0">
+    </testcase>
+    <testcase classname="deepCloneReplace deepCloneReplace should replace a key in a nested object" name="deepCloneReplace deepCloneReplace should replace a key in a nested object" time="0">
+    </testcase>
+    <testcase classname="deepCloneReplace deepCloneReplace should add a new key to an object" name="deepCloneReplace deepCloneReplace should add a new key to an object" time="0">
+    </testcase>
+    <testcase classname="deepCloneReplace deepCloneReplace should replace a key in an object with arrays" name="deepCloneReplace deepCloneReplace should replace a key in an object with arrays" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>
