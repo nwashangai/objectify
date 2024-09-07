@@ -1,29 +1,30 @@
-# Objectify
+# Objectifyjs
 
+![Static Badge](https://img.shields.io/badge/objectifyjs-dev-purple)
 ![GitHub Actions](https://img.shields.io/github/actions/workflow/status/nwashangai/objectify/ci.yml?branch=develop)
 ![Jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-4.0+-blue.svg)
-[![codecov](https://codecov.io/github/nwashangai/objectify/graph/badge.svg?token=DNTHIYPB2S)](https://codecov.io/github/nwashangai/objectify)
+[![codecov](https://codecov.io/github/nwashangai/objectify/graph/badge.svg?token=DNTHIYPB2S)](https://codecov.io/github/nwashangai/objectifyjs)
 ![Pivotal Tracker](https://img.shields.io/badge/Pivotal%20Tracker-Project-blue)
-![npm](https://img.shields.io/npm/v/objectify)
-![License](https://img.shields.io/npm/l/objectify)
+![npm](https://img.shields.io/npm/v/objectifyjs)
+![License](https://img.shields.io/npm/l/objectifyjs)
 
 ## Overview
 
-Objectify is an npm package that provides a collection of utility functions to work with objects in JavaScript. It includes functions for deep cloning, merging, extracting differences, and more. This package aims to simplify common object manipulations and enhance productivity.
+Objectifyjs is an npm package that provides a collection of utility functions to work with objects in JavaScript. It includes functions for deep cloning, merging, extracting differences, and more. This package aims to simplify common object manipulations and enhance productivity.
 
 ## Installation
 
-You can install Objectify via npm:
+You can install Objectifyjs via npm:
 
 ```sh
-npm install objectify
+npm install objectifyjs
 ```
 
 Or via yarn:
 
 ```sh
-yarn add objectify
+yarn add objectifyjs
 ```
 
 ### Features
@@ -39,7 +40,7 @@ yarn add objectify
 #### Deep Clone
 
 ```javascript
-import { deepClone } from 'objectify';
+import { deepClone } from 'objectifyjs';
 
 const original = { a: 1, b: { c: 2 } };
 const clone = deepClone(original);
@@ -50,7 +51,7 @@ console.log(clone); // { a: 1, b: { c: 2 } }
 #### Merge
 
 ```javascript
-import { merge } from 'objectify';
+import { merge } from 'objectifyjs';
 
 const obj1 = { a: 1, b: { c: 2 } };
 const obj2 = { a: 1, b: { d: 3 } };
@@ -62,13 +63,22 @@ console.log(obj1); // { a: 1, b: { c: 2, d: 3 } }
 #### Extract Differences
 
 ```javascript
-import { extractDifferences } from 'objectify';
+import { getDifference } from 'objectifyjs';
 
-const obj1 = { a: 1, b: { c: 2 } };
-const obj2 = { a: 1, b: { d: 3 } };
+const obj1 = { a: 1, b: 2, c: { d: 3 } };
+const obj2 = { a: 1, b: 3, c: { d: 4 } };
 
-const differences = extractDifferences(obj1, obj2, -1);
-console.log(differences); // { b: { d: 3 } }
+// Extract differences from obj1 to obj2
+const diff1 = getDifference(obj1, obj2, 1);
+console.log(diff1); // { b: 2, c: { d: 3 } }
+
+// Extract differences from obj2 to obj1
+const diff2 = getDifference(obj2, obj1, -1);
+console.log(diff2); // { b: 3, c: { d: 4 } }
+
+// Extract combined differences
+const diff3 = getDifference(obj1, obj2, 0);
+console.log(diff3); // { b: 2, c: { d: 3 }, b: 3, c: { d: 4 } }
 ```
 
 ### API
