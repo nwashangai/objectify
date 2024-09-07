@@ -4,6 +4,9 @@ on:
     secrets:
       NPM_TOKEN:
         required: true
+  push:
+    branches:
+      - main
 
 jobs:
   release:
