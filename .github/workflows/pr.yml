@@ -1,7 +1,8 @@
 name: Pull Request
 
 on:
-  workflow_call:
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
   build:
