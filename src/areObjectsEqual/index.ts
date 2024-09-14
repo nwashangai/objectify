@@ -1,3 +1,5 @@
+import { areArraysEqual } from '../areArraysEqual';
+
 export function areObjectsEqual<T1, T2>(obj1: T1, obj2: T2): boolean {
   // Handle strict equality and special cases
   if (Object.is(obj1, obj2)) return true;
@@ -12,10 +14,7 @@ export function areObjectsEqual<T1, T2>(obj1: T1, obj2: T2): boolean {
   // Handle array comparison
   if (Array.isArray(obj1) && Array.isArray(obj2)) {
     if (obj1.length !== obj2.length) return false;
-    for (let i = 0; i < obj1.length; i++) {
-      if (!areObjectsEqual(obj1[i], obj2[i])) return false;
-    }
-    return true;
+    return areArraysEqual(obj1, obj2);
   }
 
   // Handle object comparison

@@ -1,3 +1,4 @@
+import { deepClone } from '../commons/deepClone';
 import { RecursivePartial } from '../types/common-types';
 
 type Primitive = string | number | boolean;
@@ -29,30 +30,6 @@ export function merge<T>(target: T, source: SourceType) {
       }
     }
   }
-}
-
-// Function to deep clone an object
-export function deepClone<T>(obj: T): T {
-  if (obj === null || typeof obj !== 'object') {
-    return obj;
-  }
-
-  if (Array.isArray(obj)) {
-    const arrCopy = [];
-    for (const item of obj) {
-      arrCopy.push(deepClone(item));
-    }
-    return arrCopy as unknown as T;
-  }
-
-  const objCopy: { [K in keyof T]: T[K] } = {} as { [K in keyof T]: T[K] };
-  for (const key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) {
-      objCopy[key] = deepClone(obj[key]);
-    }
-  }
-
-  return objCopy as T;
 }
 
 // Function takes a possible nested object and a possible nested key value pair and returns a deep clone of the object with the key value pair replaced. If the key does not exist in the object, add it to the new object.
