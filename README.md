@@ -81,6 +81,36 @@ const diff3 = getDifference(obj1, obj2, 0);
 console.log(diff3); // { b: 2, c: { d: 3 }, b: 3, c: { d: 4 } }
 ```
 
+#### Check Object Equality
+
+```javascript
+import { areObjectsEqual } from 'objectifyjs';
+
+// Strict Equality
+
+const obj = { a: 1 };
+console.log(areObjectsEqual(obj, obj)); // true
+
+// Deep Equality
+const obj1 = { a: 1, b: { c: 2 } };
+const obj2 = { a: 1, b: { c: 2 } };
+console.log(areObjectsEqual(obj1, obj2)); // true
+
+// Different Structures
+const obj1 = { a: 1, b: { c: 2 } };
+const obj2 = { a: 1, b: { c: 3 } };
+console.log(areObjectsEqual(obj1, obj2)); // false
+
+// Arrays
+const arr1 = [1, 2, { a: 3 }];
+const arr2 = [1, 2, { a: 3 }];
+console.log(areObjectsEqual(arr1, arr2)); // true
+
+const arr3 = [1, 2, 3];
+const arr4 = [1, 2, 4];
+console.log(areObjectsEqual(arr3, arr4)); // false
+```
+
 ### API
 
 #### deepClone<T>(obj: T): T
@@ -116,6 +146,17 @@ Parameters:
   - 0: Extract differences from both objects, excluding common properties with different values.
 
 Returns: An object containing the differences.
+
+#### areObjectsEqual(obj1: T1, obj2: T2): boolean
+
+function to perform a deep comparison between two objects to determine if they are equal.
+
+Parameters:
+
+- obj1 (T1) - The first object to compare.
+- obj2 (T2) - The second object to compare.
+
+Returns: _boolean_ `true` if the objects are deeply equal, `false` otherwise.
 
 ### Contributing
 
